@@ -71,4 +71,5 @@ RSpec.configure do |config|
   end
 
   require 'simplecov'
+  SimpleCov.start
 end
