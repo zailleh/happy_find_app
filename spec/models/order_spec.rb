@@ -2,34 +2,34 @@ require 'rails_helper'
 
 RSpec.describe Order, as: :module do
   context 'when data is not valid' do
-    let(:order) { Order.new()  }
-    let(:valid) { Order.valid? }
+    let(:order) { Order.new  }
+    let(:valid) { order.save }
 
     it "doesn't save" do
-      expect(valid).to be false
+      expect(valid).to eq false
     end
 
     describe "has presence validation errors on" do
-      let(:errors) { order.errors }
+      let(:messages) { order.valid?; order.errors.messages }
       
       it 'customer' do
-        expect(errors.details[:customer][:error]).to match /can't be blank/
+        expect(messages[:customer].join(' ')).to match /must exist/
       end
       
       it 'supplier' do
-        expect(errors.details[:customer][:error]).to match /can't be blank/
+        expect(messages[:supplier].join(' ')).to match /must exist/
       end
       
       it 'service' do
-        expect(errors.details[:customer][:error]).to match /can't be blank/
+        expect(messages[:service].join(' ')).to match /must exist/
       end
       
       it 'datetime' do
-        expect(errors.details[:customer][:error]).to match /can't be blank/
+        expect(messages[:datetime].join(' ')).to match /can't be blank/
       end
       
       it 'duration' do
-        expect(errors.details[:customer][:error]).to match /can't be blank/
+        expect(messages[:duration].join(' ')).to match /can't be blank/
       end
     end
   end
@@ -38,29 +38,30 @@ RSpec.describe Order, as: :module do
     let(:order) {
       no_validate = { validate: false }
       Order.create({
-        :customer => Customer.new().save(no_validate),
-        :supplier => Supplier.new().save(no_validate),
-        :service  => Service.new().save(no_validate),
+        :customer => Customer.new(),
+        :supplier => Supplier.new(),
+        :service  => Service.new(),
         :datetime => DateTime::now,
         :duration => 1.hour
       })
     }
+
+    it 'will save' do
+      expect(order.save).to be true
+    end
     
     it 'has a Customer' do
-      pending 'Not yet implemented'
       expect(order.customer).to_not be nil
       expect(order.customer.class).to eq Customer
     end
 
     it 'has a Supplier' do
-      pending 'Not yet implemented'
 
       expect(order.supplier).to_not be nil
       expect(order.supplier.class).to eq Supplier
     end
 
     it 'has a Service' do
-      pending 'Not yet implemented'
 
       expect(order.supplier).to_not be nil
       expect(order.supplier.class).to eq Supplier
