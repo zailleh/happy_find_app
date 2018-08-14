@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: skills
+#
+#  id   :bigint(8)        not null, primary key
+#  name :string
+#
+
 require 'rails_helper'
 
 RSpec.describe Skill, as: :model do
