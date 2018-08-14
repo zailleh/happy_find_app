@@ -1,17 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Order, as: :module do
-  let(:order) {
-    no_validate = { validate: false }
-    Order.create({
-      :customer => Customer.new().save(no_validate),
-      :supplier => Supplier.new().save(no_validate),
-      :service  => Service.new().save(no_validate),
-      :datetime => DateTime::now,
-      :duration => 1.hour
-    })
-  }
-
   context 'when data is not valid' do
     let(:order) { Order.new()  }
     let(:valid) { Order.valid? }
@@ -45,23 +34,36 @@ RSpec.describe Order, as: :module do
     end
   end
 
-  it 'has a Customer' do
-    pending 'Not yet implemented'
-    expect(order.customer).to_not be nil
-    expect(order.customer.class).to eq Customer
-  end
+  context 'when data is valid' do
+    let(:order) {
+      no_validate = { validate: false }
+      Order.create({
+        :customer => Customer.new().save(no_validate),
+        :supplier => Supplier.new().save(no_validate),
+        :service  => Service.new().save(no_validate),
+        :datetime => DateTime::now,
+        :duration => 1.hour
+      })
+    }
+    
+    it 'has a Customer' do
+      pending 'Not yet implemented'
+      expect(order.customer).to_not be nil
+      expect(order.customer.class).to eq Customer
+    end
 
-  it 'has a Supplier' do
-    pending 'Not yet implemented'
+    it 'has a Supplier' do
+      pending 'Not yet implemented'
 
-    expect(order.supplier).to_not be nil
-    expect(order.supplier.class).to eq Supplier
-  end
+      expect(order.supplier).to_not be nil
+      expect(order.supplier.class).to eq Supplier
+    end
 
-  it 'has a Service' do
-    pending 'Not yet implemented'
+    it 'has a Service' do
+      pending 'Not yet implemented'
 
-    expect(order.supplier).to_not be nil
-    expect(order.supplier.class).to eq Supplier
+      expect(order.supplier).to_not be nil
+      expect(order.supplier.class).to eq Supplier
+    end
   end
 end

@@ -10,7 +10,62 @@
         1,
         null
       ],
-      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/spec/models/skills_spec.rb": [
+      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/spec/models/service_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        5,
+        2,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        4,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/app/models/service.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/spec/models/skill_spec.rb": [
         1,
         null,
         1,
@@ -206,19 +261,8 @@
         1,
         null,
         null
-      ],
-      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/app/models/service.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null
       ]
     },
-    "timestamp": 1534227184
+    "timestamp": 1534228315
   }
 }
