@@ -6,4 +6,9 @@
 #
 
 class Service < ApplicationRecord
+  belongs_to :supplier
+  belongs_to :skill
+  has_many :orders
+
+  validates :cost, :presence => true
 end

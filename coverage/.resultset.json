@@ -1,7 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/app/models/order.rb": [
+      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/app/models/service.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         1,
         1,
@@ -15,7 +22,7 @@
         1,
         null
       ],
-      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/app/models/customer.rb": [
+      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/app/models/supplier.rb": [
         null,
         null,
         null,
@@ -54,13 +61,7 @@
         1,
         null
       ],
-      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/app/models/supplier.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/app/models/skill.rb": [
         null,
         null,
         null,
@@ -70,21 +71,10 @@
         null,
         null,
         1,
-        null,
-        null
-      ],
-      "/Users/xael/dev/WDI Projects/Project Repositories/Project 2/happy_find_app/app/models/service.rb": [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         1,
         null
       ]
     },
-    "timestamp": 1534229981
+    "timestamp": 1534230341
   }
 }

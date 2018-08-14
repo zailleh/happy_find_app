@@ -3,25 +3,24 @@ require 'rails_helper'
 RSpec.describe Service, as: :model do
   context 'when service is not valid' do
     let(:service) { Service.new }
-    let(:valid) { service.valid? }
     
     it 'fails validation' do
-      expect(valid).to be false
+      expect(service.save).to be false
     end
 
     describe 'has validation errors on' do
-      let(:errors) { service.errors }
+      let(:messages) { service.valid?; service.errors.messages }
 
       it 'supplier' do
-        expect(errors.details[:supplier][:error]).to match /can't be blank/
+        expect(messages[:supplier].join(' ')).to match /must exist/
       end
 
       it 'skill' do
-        expect(errors.details[:skill][:error]).to match /can't be blank/
+        expect(messages[:skill].join(' ')).to match /must exist/
       end
 
       it 'cost' do
-        expect(errors.details[:cost][:error]).to match /can't be blank/
+        expect(messages[:cost].join(' ')).to match /can't be blank/
       end
     end
   end
@@ -30,8 +29,8 @@ RSpec.describe Service, as: :model do
     let(:service) { 
       no_validate = { validate: false }
       Service.create(
-        :supplier => Supplier.new().save(no_validate),
-        :skill => Skill.new().save(no_validate),
+        :supplier => Supplier.new(),
+        :skill => Skill.new(),
         :cost => 100
     )}
 
